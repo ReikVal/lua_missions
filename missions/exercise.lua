@@ -9,6 +9,14 @@
 
 -- INSERT YOUR CODE HERE
 
+local mt = getmetatable("").__index
+function mt.starts_with(str, t)
+    return string.find(str, t, 1, #t)
+end
+
+function mt.ends_with(str, t)
+    return string.find(str, t, #str - #t)
+end
 
 -- END OF CODE INSERT
 
@@ -29,11 +37,3 @@ function test_ends_with()
 end
 
 -- hint: string == getmetatable("").__index
-
-
-
-
-
-
-
-
